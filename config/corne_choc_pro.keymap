@@ -85,7 +85,7 @@
             bindings = <
                 &trans &kp F1       &kp F2          &kp F3       &kp F4      &kp F5         &trans &trans &kp F6 &kp F7 &kp F8  &kp F9  &kp F10 &trans
                 &trans &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &kp F11 &kp F12 &trans  &trans
-                &trans &bt BT_CLR   &rgb_ug RGB_TOG &sys_reset   &bootloader &studio_unlock               &tog 4 &trans &trans  &trans  &trans  &trans
+                &trans &bt BT_CLR   &rgb_ug RGB_TOG &sys_reset   &bootloader &studio_unlock               &trans &trans &trans  &trans  &trans  &tog 4
                                                     &trans &trans &trans                                   &trans &trans &trans
             >;
         };
@@ -98,9 +98,9 @@
             // |      |     |     |     |     |     |               |  {  |  }  |  |  |  ~  |     |      |
             //                    |     |     |     |               |     |     |     |
             bindings = <
-                &trans &trans &kp RA(N2) &trans &trans &trans &trans &trans &trans     &trans     &trans       &trans       &trans          &trans
+                &trans &trans &kp RA(N2) &trans &trans &trans &trans &trans &trans     &trans     &trans       &trans       &trans          
                 &trans &trans &trans     &trans &trans &trans &trans &trans &trans     &trans     &kp RA(N8)   &kp RA(N9)   &kp RA(PLUS)    &trans
-                &trans &trans &trans     &trans &trans &trans               &kp RA(N7) &kp RA(N0) &kp RA(NUBS) &kp RA(RBKT) &trans          &trans
+                &trans &trans &trans     &trans &trans &trans               &trans    &kp RA(N0) &kp RA(NUBS) &kp RA(RBKT) &trans          &tog 4
                                          &trans &trans &trans               &trans     &trans     &trans
             >;
         };
