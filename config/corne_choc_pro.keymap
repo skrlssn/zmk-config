@@ -69,7 +69,7 @@
             //                  |     |     |     |               |     |     |     |
             bindings = <
                 &trans &kp LS(N1) &kp LS(N2)   &kp LS(N3) &kp LA(N4) &kp LS(N5) &trans &trans &kp LS(N6) &kp LS(N7)  &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp LS(MINUS)
-                &trans &kp GRAVE &kp LS(LA(N8)) &kp LA(N8) &kp LS(N8)   &kp GRAVE &trans    &trans &kp TILDE &kp LS(N9)    &kp LA(9)  &kp LA(LS(N9))  &kp LS(GRAVE)  &kp BSLH
+                &trans &kp GRAVE &kp LS(LA(N8)) &kp LA(N8) &kp LS(N8)   &kp GRAVE &trans    &trans &kp TILDE &kp LS(N9)    &kp LA(N9)  &kp LA(LS(N9))  &kp LS(GRAVE)  &kp BSLH
                 &trans &trans   &trans   &trans   &trans   &trans                      &kp UNDER &kp PIPE  &kp FSLH  &kp SEMI  &kp COLON &trans
                                          &trans   &trans   &trans                      &trans    &trans    &trans
             >;
