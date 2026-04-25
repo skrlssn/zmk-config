@@ -68,7 +68,7 @@
             // |    |     |     |     |     |     |               |  _  |  |  |  /  |  ;  |  :  |     |
             //                  |     |     |     |               |     |     |     |
             bindings = <
-                &trans &kp EXCL &kp AT   &kp HASH &kp LA(N4) &kp PRCNT &trans &trans &kp CARET &kp AMPS  &kp ASTRK &kp LS(N0) &kp EQUAL &kp LS(MINUS)
+                &trans &kp LS(N1) &kp LS(N2)   &kp LS(N3) &kp LA(N4) &kp LS(N5) &trans &trans &kp LS(N6) &kp LS(N7)  &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp LS(MINUS)
                 &trans &kp LPAR &kp LBKT &kp LBRC &kp LT   &kp GRAVE &trans    &trans &kp TILDE &kp GT    &kp RBRC  &kp RBKT  &kp RPAR  &kp BSLH
                 &trans &trans   &trans   &trans   &trans   &trans                      &kp UNDER &kp PIPE  &kp FSLH  &kp SEMI  &kp COLON &trans
                                          &trans   &trans   &trans                      &trans    &trans    &trans
