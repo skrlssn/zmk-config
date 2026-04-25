@@ -21,11 +21,11 @@
         compatible = "zmk,conditional-layers";
         mac_fn_layer {
             if-layers = <2 3>;
-            then-layer = <4>;
+            then-layer = <5>;
         };
         win_fn_layer {
-            if-layers = <2 5>;
-            then-layer = <4>;
+            if-layers = <2 4>;
+            then-layer = <5>;
         };
     };
 };
@@ -34,8 +34,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "QWERTY";
+        mac_layer {
+            display-name = "QWERTY MAC";
             // --------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |  MUTE |  PP   |  Y  |  U   |  I  |  O  |  P  |  {   |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |  LALT |  RALT |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -57,11 +57,11 @@
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp C_MUTE &kp C_PP &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBRC
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G &kp LALT   &kp RALT &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                     &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                            &kp LGUI &mo 2 &kp SPACE &kp BSPC &mo 5 &kp RET
+                                            &kp LGUI &mo 2 &kp SPACE &kp BSPC &mo 4 &kp RET
             >;
         };
 
-        lower_layer {
+        num_layer {
             display-name = "NUM";
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |  LCTRL | RCTRL |  6  |  7  |  8  |  9  |  0  | DEL |
@@ -76,7 +76,7 @@
             >;
         };
 
-        raise_layer {
+        mac_sym_layer {
             display-name = "MAC SYM";
             // -----------------------------------------------------------------------------------------
             // |    |  !  |  @  |  #  |  $  |  %  |  ^  |       |       |  &  |  *  |  -  |  =  |  +  |
@@ -91,22 +91,7 @@
             >;
         };
 
-        extra_layer_1 {
-            display-name = "FUNC";
-            // -----------------------------------------------------------------------------------------
-            // |      |  F1 |  F2 |  F3 |  F4 |  F5  |       |       |  F6 |  F7 |  F8 | F9  | F10 |      |
-            // |      | BT1 | BT2 | BT3 | BT4 | BT5  |       |       |     |     | F11 | F12 |     |      |
-            // |      |BTCR | RGB | RST |BOOT |UNLOCK|               | WIN |     |     |     |     |      |
-            //                    |     |     |      |               |     |     |     |
-            bindings = <
-                &trans &kp F1       &kp F2          &kp F3       &kp F4      &kp F5         &trans &trans &kp F6 &kp F7 &kp F8  &kp F9  &kp F10 &trans
-                &trans &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &kp F11 &kp F12 &trans  &trans
-                &trans &bt BT_CLR   &rgb_ug RGB_TOG &sys_reset   &bootloader &studio_unlock               &trans &trans &trans  &trans  &trans  &tog 1
-                                                    &trans &trans &trans                                   &trans &trans &trans
-            >;
-        };
-
-        extra_layer_2 {
+        win_sym_layer{
             display-name = "WIN SYM";
             // Windows Swedish overrides — only positions that differ from Mac (layer 2)
             // |      |     |  @  |     |     |     |       |       |     |     |     |     |     |      |
@@ -118,6 +103,21 @@
                 &trans &kp NON_US_BACKSLASH &kp RA(N7)    &kp RA(N8)  &trans      &trans    &trans &trans   &trans    &trans  &kp RA(N9)    &kp RA(N0)  &kp LS(NON_US_BACKSLASH)    &trans
                 &trans &trans &trans        &trans      &trans      &trans                                  &trans                      &trans  &trans        &trans      &trans    &trans
                                             &trans      &trans      &trans                                  &trans                      &trans  &trans
+            >;
+        };
+
+        func_layer {
+            display-name = "FUNC";
+            // -----------------------------------------------------------------------------------------
+            // |      |  F1 |  F2 |  F3 |  F4 |  F5  |       |       |  F6 |  F7 |  F8 | F9  | F10 |      |
+            // |      | BT1 | BT2 | BT3 | BT4 | BT5  |       |       |     |     | F11 | F12 |     |      |
+            // |      |BTCR | RGB | RST |BOOT |UNLOCK|               | WIN |     |     |     |     |      |
+            //                    |     |     |      |               |     |     |     |
+            bindings = <
+                &trans &kp F1       &kp F2          &kp F3       &kp F4      &kp F5         &trans &trans &kp F6 &kp F7 &kp F8  &kp F9  &kp F10 &trans
+                &trans &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &kp F11 &kp F12 &trans  &trans
+                &trans &bt BT_CLR   &rgb_ug RGB_TOG &sys_reset   &bootloader &studio_unlock               &trans &trans &trans  &trans  &trans  &tog 1
+                                                    &trans &trans &trans                                   &trans &trans &trans
             >;
         };
 
