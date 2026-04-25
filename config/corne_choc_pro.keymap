@@ -98,10 +98,10 @@
             // |      |     |     |     |     |     |               |  {  |  }  |  |  |  ~  |     |      |
             //                    |     |     |     |               |     |     |     |
             bindings = <
-                &trans &trans &kp RA(N2) &trans &trans &trans &trans &trans &trans     &trans     &trans       &trans       &trans          
-                &trans &trans &trans     &trans &trans &trans &trans &trans &trans     &trans     &kp RA(N8)   &kp RA(N9)   &kp RA(PLUS)    &trans
-                &trans &trans &trans     &trans &trans &trans               &trans    &kp RA(N0) &kp RA(NUBS) &kp RA(RBKT) &trans          &tog 4
-                                         &trans &trans &trans               &trans     &trans     &trans
+                &trans &trans &trans        &trans      &kp RA(N4)  &trans                  &trans &trans   &trans                      &trans  &trans        &trans      &trans    &trans      
+                &trans &trans &kp RA(N7)    &kp RA(N8)  &trans      &kp NON_US_BACKSLASH    &trans &trans   &kp LS(NON_US_BACKSLASH)    &trans  &kp RA(N9)    &kp RA(N0)  &trans    &trans
+                &trans &trans &trans        &trans      &trans      &trans                                  &trans                      &trans  &trans        &trans      &trans    &tog 4
+                                            &trans      &trans      &trans                                  &trans                      &trans  &trans
             >;
         };
 
