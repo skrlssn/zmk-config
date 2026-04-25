@@ -16,6 +16,16 @@
 };
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        fn_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -66,12 +76,17 @@
         };
 
         extra_layer_1 {
-            display-name = "EXTRA 1";
+            display-name = "FUNCTION";
+            // -----------------------------------------------------------------------------------------
+            // |      |  F1 |  F2 |  F3 |  F4 |  F5 |       |       |  F6 |  F7 |  F8 |  F9 | F10 |      |
+            // |      | F11 | F12 |     |     |     |       |       |     |     |     |     |     |      |
+            // |      |     |     |     |     |     |               |     |     |     |     |     |      |
+            //                    |     |     |     |               |     |     |     |
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans               &trans &trans &trans       
+                &trans &kp F1  &kp F2  &kp F3 &kp F4 &kp F5 &trans &trans &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
+                &trans &kp F11 &kp F12 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans  &trans
+                &trans &trans  &trans  &trans &trans &trans               &trans &trans &trans &trans &trans  &trans
+                                       &trans &trans &trans               &trans &trans &trans
             >;
         };
 
