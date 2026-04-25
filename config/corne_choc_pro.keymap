@@ -19,17 +19,16 @@
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        fn_layer {
+        mac_fn_layer {
             if-layers = <1 2>;
+            then-layer = <3>;
+        };
+        win_fn_layer {
+            if-layers = <1 4>;
             then-layer = <3>;
         };
     };
 };
-
-#define MAC 0
-#define WIN 5   // new base layer
-#define SYM_MAC 2
-#define SYM_WIN 4
 
 / {
     keymap {
@@ -46,7 +45,7 @@
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp C_MUTE &kp C_PP &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBRC
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G &kp LALT   &kp RALT &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                     &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                      &kp LGUI &mo 1 &kp SPACE              &kp BSPC &mo SYM_MAC &kp RET
+                                      &kp LGUI &mo 1 &kp SPACE              &kp BSPC &mo 2 &kp RET
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_BRI_DN C_BRI_UP>;
         };
@@ -91,7 +90,7 @@
             bindings = <
                 &trans &kp F1       &kp F2          &kp F3       &kp F4      &kp F5         &trans &trans &kp F6 &kp F7 &kp F8  &kp F9  &kp F10 &trans
                 &trans &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &kp F11 &kp F12 &trans  &trans
-                &trans &bt BT_CLR   &rgb_ug RGB_TOG &sys_reset   &bootloader &studio_unlock               &trans &trans &trans  &trans  &trans  &tog WIN
+                &trans &bt BT_CLR   &rgb_ug RGB_TOG &sys_reset   &bootloader &studio_unlock               &trans &trans &trans  &trans  &trans  &tog 5
                                                     &trans &trans &trans                                   &trans &trans &trans
             >;
         };
@@ -118,7 +117,7 @@
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp C_MUTE &kp C_PP &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBRC
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G &kp LALT   &kp RALT &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                     &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                            &kp LGUI &mo 1 &kp SPACE &kp BSPC &mo SYM_WIN &kp RET
+                                            &kp LGUI &mo 1 &kp SPACE &kp BSPC &mo 4 &kp RET
             >;
         };
 
