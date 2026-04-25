@@ -44,7 +44,7 @@
             key-positions = <43 44>;
             bindings = <&kp ESC>;
             layers = <0 1>;
-        }; 
+        };
     };
 };  
 
@@ -54,11 +54,6 @@
 
         mac_layer {
             display-name = "QWERTY MAC";
-            // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |  MUTE |  PP   |  Y  |  U   |  I  |  O  |  P  |  {   |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |  LALT |  RALT |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |               |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |               | BSPC | RSE  | ENT |
             bindings = <
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp CAPS &kp C_PP &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBRC
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G &sk LALT   &sk RALT &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
@@ -70,7 +65,6 @@
 
         win_layer {
             display-name = "QWERTY WIN";
-
             bindings = <
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp CAPS &kp C_PP &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBRC
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G &kp LGUI   &sk RALT &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
@@ -81,11 +75,6 @@
 
         num_layer {
             display-name = "NUM";
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |  LCTRL | RCTRL |  6  |  7  |  8  |  9  |  0  | DEL |
-            // | CTRL |     |     |     |     |     |  LALT  | RALT  | LFT | DWN |  UP | RGT |     |     |
-            // | SHFT |     |     |     |     |     |                |     |     |     |     |     |     |
-            //                    |     |     |     |                |     |     |     |
             bindings = <
                 &kp TAB   &kp N1       &kp N2          &kp N3       &kp N4       &kp N5       &kp LCTRL &kp RCTRL &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp DEL
                 &kp LCTRL &trans &trans &trans &trans &trans &kp LALT  &kp RALT  &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
@@ -96,41 +85,26 @@
 
         mac_sym_layer {
             display-name = "MAC SYM";
-            // -----------------------------------------------------------------------------------------
-            // |    |  !  |  @  |  #  |  $  |  %  |  ^  |       |       |  &  |  *  |  -  |  =  |  +  |
-            // |    |  (  |  [  |  {  |  <  |  `  |       |       |  ~  |  >  |  }  |  ]  |  )  |  \  |
-            // |    |     |     |     |     |     |               |  _  |  |  |  /  |  ;  |  :  |     |
-            //                  |     |     |     |               |     |     |     |
             bindings = <
                 &trans &kp LS(N1) &kp LS(N2)   &kp LS(N3) &kp LA(N4) &kp LS(N5) &trans &trans &kp LS(N6) &kp LS(N7)  &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp LS(MINUS)
                 &trans &kp GRAVE &kp LS(LA(N8)) &kp LA(N8) &kp LS(N8)   &trans &trans    &trans &trans &kp LS(N9)    &kp LA(N9)  &kp LA(LS(N9))  &kp LS(GRAVE)  &kp BSLH
-                &trans &trans   &trans   &trans   &trans   &trans                      &kp UNDER &kp PIPE  &kp FSLH  &kp SEMI  &kp COLON &trans
+                &trans &trans   &trans   &trans   &trans   &trans                      &kp UNDER &kp PIPE &trans  &kp MINUS  &kp FSLH &trans
                                          &trans   &trans   &trans                      &trans    &trans    &trans
             >;
         };
 
         win_sym_layer{
             display-name = "WIN SYM";
-            // Windows Swedish overrides — only positions that differ from Mac (layer 2)
-            // |      |     |  @  |     |     |     |       |       |     |     |     |     |     |      |
-            // |      |     |     |     |     |     |       |       |     |     |  [  |  ]  |  \  |      |
-            // |      |     |     |     |     |     |               |  {  |  }  |  |  |  ~  |     |      |
-            //                    |     |     |     |               |     |     |     |
             bindings = <
                 &trans &kp LS(N1) &kp LS(N2)   &kp LS(N3)      &kp RA(N4) &kp LS(N5) &trans &trans &kp LS(N6) &kp LS(N7)  &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp LS(MINUS)
-                &trans &kp NON_US_BACKSLASH &kp RA(N7)    &kp RA(N8)  &kp LS(N8)      &trans    &trans &trans   &trans    &kp LS(N9)  &kp RA(N9)    &kp RA(N0)  &kp LS(NON_US_BACKSLASH)    &trans
-                     &trans &trans   &trans   &trans   &trans   &trans                      &kp UNDER &kp PIPE  &kp FSLH  &kp SEMI  &kp COLON &trans
+                &trans &kp NON_US_BACKSLASH &kp RA(N7)    &kp RA(N8)  &kp LS(N8)      &trans    &trans &trans   &trans    &kp LS(N9)  &kp RA(N9)    &kp RA(N0)  &kp LS(NON_US_BACKSLASH) &kp BSLH
+                &trans &trans   &trans   &trans   &trans   &trans                      &kp UNDER &kp PIPE  &trans &kp MINUS  &kp FSLH &trans
                                          &trans   &trans   &trans                      &trans    &trans    &trans
             >;
         };
 
         func_layer {
             display-name = "FUNC";
-            // -----------------------------------------------------------------------------------------
-            // |      |  F1 |  F2 |  F3 |  F4 |  F5  |       |       |  F6 |  F7 |  F8 | F9  | F10 |      |
-            // |      | BT1 | BT2 | BT3 | BT4 | BT5  |       |       |     |     | F11 | F12 |     |      |
-            // |      |BTCR | RGB | RST |BOOT |UNLOCK|               | WIN |     |     |     |     |      |
-            //                    |     |     |      |               |     |     |     |
             bindings = <
                 &trans &kp F1       &kp F2          &kp F3       &kp F4      &kp F5         &trans &trans &kp F6 &kp F7 &kp F8  &kp F9  &kp F10 &trans
                 &trans &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &kp F11 &kp F12 &trans  &trans
