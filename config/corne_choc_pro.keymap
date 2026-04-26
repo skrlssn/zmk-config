@@ -39,6 +39,12 @@
             bindings = <&kp LGUI>;
             layers = <1>;
         };
+        combo_spotlight {
+            timeout-ms = <50>;
+            key-positions = <40 41>;
+            bindings = <&kp LG(SPACE)>;
+            layers = <0>;
+        };
         combo_esc {
             timeout-ms = <50>;
             key-positions = <43 44>;
