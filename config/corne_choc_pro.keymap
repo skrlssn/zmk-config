@@ -105,7 +105,8 @@
 / {
     combos {
         compatible = "zmk,combos";
-e            timeout-ms = <50>;
+        combo_esc {
+            timeout-ms = <50>;
             key-positions = <43 44>;
             bindings = <&kp ESC>;
             layers = <0 1>;
