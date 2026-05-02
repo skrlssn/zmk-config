@@ -17,6 +17,51 @@
 };
 
 / {
+    macros {
+        win_euro: win_euro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
+                , <&macro_release &kp LALT>;
+        };
+        win_lbrace: win_lbrace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N3>
+                , <&macro_release &kp LALT>;
+        };
+        win_lbkt: win_lbkt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N0 &kp KP_N0 &kp KP_N9 &kp KP_N1>
+                , <&macro_release &kp LALT>;
+        };
+        win_rbrace: win_rbrace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N5>
+                , <&macro_release &kp LALT>;
+        };
+        win_rbkt: win_rbkt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N0 &kp KP_N0 &kp KP_N9 &kp KP_N3>
+                , <&macro_release &kp LALT>;
+        };
+    };
+};
+
+/ {
     behaviors {
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
@@ -116,8 +161,8 @@
         win_sym_layer{
             display-name = "WIN SYM";
             bindings = <
-                &trans &kp LS(N1) &kp LS(N2)   &kp LS(N3)      &kp RA(N4) &kp LS(N5) &trans &trans &kp LS(N6) &kp LS(N7)  &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp LS(MINUS)
-                &trans &kp NON_US_BACKSLASH &kp RA(N7)    &kp RA(N8)  &kp LS(N8)      &trans    &trans &trans   &trans    &kp LS(N9)  &kp RA(N9)    &kp RA(N0)  &kp LS(NON_US_BACKSLASH) &kp BSLH
+                &trans &kp LS(N1) &kp LS(N2)   &kp LS(N3)      &win_euro &kp LS(N5) &trans &trans &kp LS(N6) &kp LS(N7)  &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp LS(MINUS)
+                &trans &kp NON_US_BACKSLASH &win_lbrace    &win_lbkt  &kp LS(N8)      &trans    &trans &trans   &trans    &kp LS(N9)  &win_rbkt    &win_rbrace  &kp LS(NON_US_BACKSLASH) &kp BSLH
                 &trans &trans   &trans   &trans   &trans   &trans                      &kp UNDER &kp PIPE  &trans &kp MINUS  &kp FSLH &trans
                                          &trans   &trans   &trans                      &trans    &trans    &trans
             >;
