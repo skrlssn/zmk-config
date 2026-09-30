@@ -93,6 +93,14 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 6 7 14 15 16 17 18 19 20 21 28 29 30 31 32 33 40 41 42>;
             hold-trigger-on-release;
         };
+        // Hold for 2 s to enter bootloader on the half the key sits on. Tap does nothing.
+        hold_boot: hold_bootloader {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <2000>;
+            bindings = <&bootloader>, <&none>;
+        };
     };
 };
 
@@ -150,7 +158,7 @@
             display-name = "NUM";
             bindings = <
                 &trans   &kp N1       &kp N2          &kp N3       &kp N4       &kp N5       &kp LCTRL &kp RCTRL &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp DEL
-                &trans &trans &trans &trans &trans &trans &kp LALT  &kp RALT  &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+                &trans &trans &trans &trans &trans &hold_boot 0 0 &kp LALT  &kp RALT  &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
                 &trans &trans &trans &trans &trans &trans                       &trans   &trans   &trans &trans    &trans &trans
                                                             &trans     &trans       &trans                         &trans &trans    &trans
             >;
@@ -160,7 +168,7 @@
             display-name = "MAC SYM";
             bindings = <
                 &trans &kp LS(N1) &kp LS(N2)   &kp LS(N3) &kp LA(N4) &kp LS(N5) &trans &trans &kp LS(N6) &kp LS(N7)  &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp LS(MINUS)
-                &trans &kp GRAVE &kp LS(LA(N8)) &kp LA(N8) &kp LS(N8)   &trans &trans    &trans &trans &kp LS(N9)    &kp LA(N9)  &kp LA(LS(N9))  &kp LS(GRAVE)  &kp BSLH
+                &trans &kp GRAVE &kp LS(LA(N8)) &kp LA(N8) &kp LS(N8)   &trans &trans    &trans &hold_boot 0 0 &kp LS(N9)    &kp LA(N9)  &kp LA(LS(N9))  &kp LS(GRAVE)  &kp BSLH
                 &trans &trans   &trans   &trans   &trans   &trans                      &kp UNDER &kp PIPE &trans  &kp MINUS  &kp FSLH &trans
                                          &trans   &trans   &trans                      &trans    &trans    &trans
             >;
@@ -170,7 +178,7 @@
             display-name = "WIN SYM";
             bindings = <
                 &trans &kp LS(N1) &kp LS(N2)   &kp LS(N3)      &win_euro &kp LS(N5) &trans &trans &kp LS(N6) &kp LS(N7)  &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp LS(MINUS)
-                &trans &kp NON_US_BACKSLASH &win_lbrace    &win_lbkt  &kp LS(N8)      &trans    &trans &trans   &trans    &kp LS(N9)  &win_rbkt    &win_rbrace  &kp LS(NON_US_BACKSLASH) &kp BSLH
+                &trans &kp NON_US_BACKSLASH &win_lbrace    &win_lbkt  &kp LS(N8)      &trans    &trans &trans   &hold_boot 0 0 &kp LS(N9)  &win_rbkt    &win_rbrace  &kp LS(NON_US_BACKSLASH) &kp BSLH
                 &trans &trans   &trans   &trans   &trans   &trans                      &kp UNDER &kp PIPE  &trans &kp MINUS  &kp FSLH &win_bslh
                                          &trans   &trans   &trans                      &trans    &trans    &trans
             >;
