@@ -17,6 +17,7 @@ ZMK firmware configuration for a Corne Choc Pro split keyboard. Firmware is buil
 | [config/corne_choc_pro.conf](config/corne_choc_pro.conf) | Firmware config (power, BT, etc) |
 | [config/west.yml](config/west.yml) | ZMK version pinned to `v0.3` |
 | [.github/workflows/build.yml](.github/workflows/build.yml) | CI build |
+| [scripts/download-firmware.sh](scripts/download-firmware.sh) | Download latest main build's `.uf2` files via `gh` |
 
 ## Key positions (default 6-col layout)
 
